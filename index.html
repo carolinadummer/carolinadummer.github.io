@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meninas na TI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="script.js" defer="defer"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Portfólio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h1 class="display-4">Meu Portfólio</h1>
+            <p class="lead">Olá me chamo Carolina Dummer e aqui estão alguns dos meus projetos do curso de TI.</p>
+        </div>
+    </header>
+
+    <!-- Sobre -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <p>Me chamo Carolina Campos Dummer, tenho 16 anos, e sou estudante do Colégio Dr. Wolfram Metzler e curso Tecnologia da Informação no Senac. Sou comunicativa e colaboro com todos, tenho uma grande facilidade em trabalhar em equipe e capacidade de me expressar com clareza. Sempre busco aprender mais e evoluir na TI.</p>
+        </div>
+    </section>
+
+    <!-- Opções de contato adicionais (será movida abaixo do formulário de contato) -->
+
+    <!-- Projetos -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2>Projetos</h2>
+            <div id="projectsGrid" class="row">
+                <!-- Projetos serão renderizados aqui via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2>Envie sua mensagem aqui</h2>
+            <form id="contactForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="name" placeholder="Escreva aqui..." required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Escreva aqui..." required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensagem</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Escreva aqui..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Opções de contato adicionais -->
+    <section id="contact-options" class="py-4 bg-white">
+        <div class="container text-center">
+            <h3>Outras formas de contato</h3>
+            <p>Fale comigo também por email, Instagram ou GitHub.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="mailto:dummercarolina@gmail.com" class="btn btn-outline-primary" title="Email">
+                    <i class="bi bi-envelope-fill"></i> Email
+                </a>
+                <a href="https://www.instagram.com/cdummer_" target="_blank" rel="noopener" class="btn btn-outline-danger" title="Instagram">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+                <a href="https://github.com/carolinadummer" target="_blank" rel="noopener" class="btn btn-outline-dark" title="GitHub">
+                    <i class="bi bi-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer class="py-4 bg-dark text-white">
+        <div class="container text-center">
+            <small>© 2025 Carolina Dummer</small>
+        </div>
+    </footer>
+</body>
+</html>

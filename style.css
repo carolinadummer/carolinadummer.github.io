@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Luckiest+Guy&display=swap');
+body {
+            font-family: "Luckiest Guy", cursive;
+            margin: 0;
+            background: white;
+            color: #333;
+        }
+
+.top-fixed {
+    /* Centraliza horizontalmente — .text-center do Bootstrap também já faz isso */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: #8ec2da;
+}
+
+/* Pequeno ajuste responsivo para o título */
+@media (min-width: 768px) {
+    .top-fixed {
+        margin-top: 1.5rem;
+    }
+}
+
+/* ----- Estilos do portfólio ----- */
+.navbar-brand {
+    font-weight: 700;
+}
+
+header.bg-primary {
+    background: linear-gradient(135deg, #2b86c6 0%, #1e5799 100%);
+}
+
+.card {
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Espaçamento e borda por projeto */
+.project-col {
+    padding: 0.5rem; /* mais espaçamento interno por projeto */
+}
+
+.project-col .card {
+    border: 1px solid rgba(0,0,0,0.28); /* borda mais escura por projeto */
+}
+
+/* Garantir que colunas e cards estiquem para mesma altura/largura */
+#projectsGrid > .col-md-4.d-flex {
+    align-items: stretch;
+}
+
+#projectsGrid .card {
+    height: 100%;
+}
+
+/* Uniformizar tamanho dos cards */
+#projectsGrid .project-col .card {
+    min-height: 340px; /* ajuste para igualar altura e largura visual */
+}
+
+/* Espaçamento interno da grade de projetos */
+#projectsGrid {
+    padding: 1rem 0;
+}
+
+/* Garantir imagens com altura fixa e cobertura */
+.card-img-top {
+    height: 160px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Reduzir gutter (espaçamento entre colunas) apenas para a grade de projetos */
+#projectsGrid.row {
+    --bs-gutter-x: 0.5rem; /* horizontal gutter */
+    --bs-gutter-y: 0.5rem; /* vertical gutter */
+}
+
+/* Garantir colunas e cards igualam tamanho independentemente do conteúdo */
+#projectsGrid .col-md-4 {
+    display: flex;
+    align-items: stretch;
+}
+
+#projectsGrid .col-md-4 .card {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 340px; /* reforçar tamanho mínimo */
+}
+
+section h2 {
+    margin-bottom: 1rem;
+}
+
+/* Card body alignment */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 auto; /* permite o corpo do card crescer e igualar a altura dos cards */
+}
+
+/* h2 na cor primary do Bootstrap */
+h2, section h2 {
+    color: var(--bs-primary, #0d6efd);
+}
+
+/* h3 usar cor primary para destaque */
+h3 {
+    color: var(--bs-primary, #0d6efd);
+}
+
+/* Espaçamento entre formulário de contato e opções de contato */
+#contact-options {
+    margin-top: 2rem;
+}
+
+/* Espaçamento entre opções de contato e footer */
+#contact-options {
+    margin-bottom: 2rem;
+}
+
+#contact form {
+    max-width: 700px;
+}
+
+/* cartão de contato removido (revertido) */
+/* regras `.card-contact` removidas conforme solicitação do usuário */
+
+#contact .form-label {
+    font-weight: 600;
+}
+
+/* Borda sempre visível para os campos de contato (cinza) */
+#name, #email, #message {
+    border: 2px solid #cfcfcf; /* cinza claro */
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+}
+
+/* Placeholder mais visível */
+#name::placeholder,
+#email::placeholder,
+#message::placeholder {
+    color: #666666; /* tom de cinza mais escuro */
+    opacity: 1; /* garantir visibilidade em todos os navegadores */
+}
+
+/* WebKit browsers */
+#name::-webkit-input-placeholder,
+#email::-webkit-input-placeholder,
+#message::-webkit-input-placeholder {
+    color: #666666;
+    opacity: 1;
+}
+
+/* Firefox older */
+#name:-moz-placeholder,
+#email:-moz-placeholder,
+#message:-moz-placeholder {
+    color: #666666;
+    opacity: 1;
+}
+
+/* Firefox 19+ */
+#name::-moz-placeholder,
+#email::-moz-placeholder,
+#message::-moz-placeholder {
+    color: #666666;
+    opacity: 1;
+}
+
+/* IE 10+ */
+#name:-ms-input-placeholder,
+#email:-ms-input-placeholder,
+#message:-ms-input-placeholder {
+    color: #666666;
+    opacity: 1;
+}
+
+footer {
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+@media (max-width: 576px) {
+    header .display-4 { font-size: 1.75rem; }
+}
