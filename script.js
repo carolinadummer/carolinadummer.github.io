@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var projects = [
         { title: 'Quiz de animais',
             description: 'Um quiz simples e de conhecimento básico sobre animais.',
-            image: 'imagens/animal-quiz.png',
+            image: 'imagens/quiz-animais.png',
             link: 'https://github.com/carolinadummer/Quiz-Animal'
         },
         { title: 'ToDo', 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         { title: 'Cardápio', 
             description: 'Uma aplicação para exibir um cardápio digital de pizzaria', 
-            image: 'imagens/cardapio.png',
+            image: 'imagens/cardápio.png',
             link: 'https://github.com/carolinadummer/Cardapio' 
         },
         { title: 'Star Wars', 
@@ -103,20 +103,42 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
     
-    // Formulário simulado
+    // Enviar via mailto: abre o cliente de email do visitante com mensagem pré-preenchida
     var form = document.getElementById('contactForm');
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            var btn = form.querySelector('button[type="submit"]');
-            btn.disabled = true;
-            btn.textContent = 'Enviando...';
-            setTimeout(function () {
-                btn.disabled = false;
-                btn.textContent = 'Enviar';
-                alert('Mensagem enviada. Obrigado!');
-                form.reset();
-            }, 1000);
+            var name = (document.getElementById('name') || {}).value || '';
+            var email = (document.getElementById('email') || {}).value || '';
+            var message = (document.getElementById('message') || {}).value || '';
+
+            var subject = 'Mensagem do portfólio: ' + (name || 'Contato');
+            var bodyLines = [];
+            if (name) bodyLines.push('Nome: ' + name);
+            if (email) bodyLines.push('Email: ' + email);
+            bodyLines.push('---');
+            bodyLines.push(message);
+            var body = bodyLines.join('\n');
+
+            var mailto = 'mailto:dummercarolina@gmail.com'
+                + '?subject=' + encodeURIComponent(subject)
+                + '&body=' + encodeURIComponent(body);
+
+            // Tenta abrir o cliente de e-mail do usuário
+            try {
+                window.location.href = mailto;
+            } catch (err) {
+                // fallback: mostrar a mensagem para copiar manualmente
+                alert('Não foi possível abrir o cliente de email. Por favor, envie manualmente para dummercarolina@gmail.com\n\n' + message);
+            }
+            // opcional: resetar formulário após abrir o mail client
+            form.reset();
         });
     }
+
+    // Inicializar tooltips do Bootstrap (para os botões de contato)
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.forEach(function (el) {
+        try { new bootstrap.Tooltip(el); } catch (e) { /* bootstrap não disponível */ }
+    });
 });

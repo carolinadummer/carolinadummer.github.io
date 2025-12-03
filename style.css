@@ -5,7 +5,7 @@ body {
             background: white;
             color: #333;
         }
-
+        
 .top-fixed {
     /* Centraliza horizontalmente — .text-center do Bootstrap também já faz isso */
     text-align: center;
@@ -27,13 +27,14 @@ body {
     font-weight: 700;
 }
 
+
 header.bg-primary {
-    background: linear-gradient(135deg, #2b86c6 0%, #1e5799 100%);
+    background: linear-gradient(135deg, var(--blue-500) 0%, var(--blue-700) 100%);
 }
 
 .card {
-    border: 1px solid rgba(0,0,0,0.08);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    border: 1px solid rgba(27, 82, 138, 0.12); /* azul claro */
+    box-shadow: 0 6px 18px rgba(27, 82, 138, 0.06);
     display: flex;
     flex-direction: column;
 }
@@ -46,6 +47,8 @@ header.bg-primary {
 .project-col .card {
     border: 1px solid rgba(0,0,0,0.28); /* borda mais escura por projeto */
 }
+
+/* (color accent overrides removed to restore previous palette) */
 
 /* Garantir que colunas e cards estiquem para mesma altura/largura */
 #projectsGrid > .col-md-4.d-flex {
@@ -115,12 +118,12 @@ h3 {
 
 /* Espaçamento entre formulário de contato e opções de contato */
 #contact-options {
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 /* Espaçamento entre opções de contato e footer */
 #contact-options {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 #contact form {
